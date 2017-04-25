@@ -1,0 +1,21 @@
+.add-block {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.add-block-wrapper {
+  display: flex;
+  height: 1em;
+  width: 1em;
+  background-color: lightseagreen;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-block-wrapper span {
+  display: block;
+  margin-top: -4px;
+  cursor: pointer;
+}

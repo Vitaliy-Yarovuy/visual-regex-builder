@@ -11,13 +11,15 @@ import {WorkspaceComponent} from './workspace/workspace.component';
 import {OutputComponent} from './output/output.component';
 import {RegexBuilderService} from './core/regex-builder.service';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { AddBlockComponent } from './core/add-block/add-block.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlocksContainerComponent,
     WorkspaceComponent,
-    OutputComponent
+    OutputComponent,
+    AddBlockComponent
   ],
   imports: [
     BrowserModule,
