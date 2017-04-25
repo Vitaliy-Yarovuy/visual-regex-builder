@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Wolters Kluwer Code Games';
-  subtitle = 'Regular Expressions Builder';
+  title = 'Visual Regular Expressions Builder';
 }

@@ -1,5 +1,9 @@
-<section>
-  <h3>startOfLine()</h3>
-  <h3>or()</h3>
-  <h3>find('text')</h3>
-</section>
+<div class="blocks-container">
+  <md-toolbar color="accent">
+    <md-card *ngFor="let block of blocks">
+      <md-card-content class="content">
+        <div class="block">{{block.name}}</div>
+      </md-card-content>
+    </md-card>
+  </md-toolbar>
+</div>

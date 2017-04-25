@@ -1,10 +1,20 @@
-section {
-  border: 1px dashed grey;
-  padding: 5px;
-  margin: 5px;
+.blocks-container {
+  display: flex;
+  justify-content: flex-start;
 }
 
-h3{
-  border: 1px dashed grey;
-  display: inline-block;
+md-toolbar {
+  padding: 0.5em;
+}
+
+md-card {
+  min-width: 5em;
+  margin-right: 1em;
+}
+
+.content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
 }
