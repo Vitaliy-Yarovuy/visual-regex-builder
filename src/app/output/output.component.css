@@ -1,3 +1,20 @@
 button {
   margin: 0 0.4em;
 }
+
+.mat-input-container {
+  width: 100%;
+}
+
+.flags {
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.7em;
+  justify-content: space-between;
+}
+
+.flag-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-width: 15em;
+}
