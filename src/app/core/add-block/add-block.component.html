@@ -1,5 +1,12 @@
 <div class="add-block">
   <div class="add-block-wrapper">
-    <span (click)="showMessage()">+</span>
+    <button md-mini-fab (click)="toggleDropdown()" color="warn">+</button>
+    <div class="select-wrapper wolters-kluwer-border" *ngIf="isClicked">
+      <md-select [(ngModel)]="selectedBlock" (change)="toggleDropdown()">
+        <md-option *ngFor="let block of blocks" [value]="block.type">{{block.name}}</md-option>
+      </md-select>
+    </div>
+    <!--TODO Delete this mock-->
+    <h6>{{selectedBlock}}</h6>
   </div>
 </div>

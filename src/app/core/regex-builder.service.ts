@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {RegexBlock} from './regex-block/regex-block.component';
-import {BehaviorSubject, Observable, Observer, Subject} from "rxjs";
-import {Block, BlockType, getRegexBlock} from "../block-models/regex-block-models";
+import {BehaviorSubject, Observable, Observer, Subject} from 'rxjs';
+import {Block, BlockType, getRegexBlock} from '../block-models/regex-block-models';
 
 interface BlockElement {
   index: number;

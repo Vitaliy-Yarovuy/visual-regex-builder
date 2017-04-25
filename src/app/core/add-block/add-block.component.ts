@@ -1,19 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import {getRegexBlock} from "../../block-models/regex-block-models";
+import {RegexpDataService} from "../services/regexp-data.service";
 
 @Component({
   selector: 'cg-add-block',
   templateUrl: './add-block.component.html',
   styleUrls: ['./add-block.component.css']
 })
-export class AddBlockComponent implements OnInit {
+export class AddBlockComponent extends RegexpDataService implements OnInit {
 
-  constructor() { }
+  blocks: Array<any>;
 
-  ngOnInit() {
+  isClicked = false;
+
+  constructor() {
+    super();
   }
 
-  showMessage() {
-    alert("HELB I NEED SOMEBODY");
+  ngOnInit() {
+    this.blocks = this.getRegExpData();
+  }
+
+  toggleDropdown() {
+    this.isClicked = !this.isClicked;
   }
 
 }
