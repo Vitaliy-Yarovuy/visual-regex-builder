@@ -3,27 +3,22 @@
   justify-content: flex-start;
 }
 
-md-toolbar {
-  padding: 0.5em;
-}
-
 md-card {
-  min-width: 5em;
+  margin: 0.2em;
 }
 
-.container {
+.mat-toolbar-row {
+  height: auto;
+}
+
+.blocks {
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
   display: flex;
-  align-items: center;
 }
 
 .combiner {
   display: block;
-  padding: 0.4em;
-}
-
-.content {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
+  padding: 1em;
 }

@@ -1,9 +1,9 @@
 <div class="workspace-container">
   <md-toolbar color="accent">
     <h2>Workflow</h2>
-    <md-toolbar-row [dragula]='"drag-bag"'>
-      <div class="container" *ngFor="let block of blocks">
-        <md-card>
+    <md-toolbar-row>
+      <div class="blocks" [dragula]='"drag-bag"'>
+        <md-card *ngFor="let block of blocks">
           <md-card-content class="content">
             <div class="block">{{block.name}}</div>
           </md-card-content>

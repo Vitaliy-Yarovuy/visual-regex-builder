@@ -1,20 +1,24 @@
 .blocks-container {
   display: flex;
-  justify-content: flex-start;
-}
-
-md-toolbar {
-  padding: 0.5em;
+  align-items: stretch;
 }
 
 md-card {
-  min-width: 5em;
-  margin-right: 1em;
+  margin: 0.2em;
 }
 
-.content {
-  display: flex;
+.mat-toolbar-row {
+  height: auto;
+}
+
+.blocks {
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
-  width: 100%;
+  display: flex;
+  flex: 2 1 auto;
+}
+
+.block {
+  /*min-width: 30px;*/
 }
