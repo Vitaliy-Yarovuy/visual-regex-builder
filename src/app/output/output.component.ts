@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {RegexBuilderService} from '../core/regex-builder.service';
 
 @Component({
   selector: 'cg-output',
@@ -9,9 +10,15 @@ export class OutputComponent implements OnInit {
 
   regExp = /[a-zA-Z\d\s\-,#.+]+/;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private regexBuilderService: RegexBuilderService) {
   }
 
+  ngOnInit() {
+    this.change();
+  }
+
+  change() {
+    this.regExp = this.regexBuilderService.generateRegex();
+
+  }
 }
