@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OutputComponent implements OnInit {
 
+  regExp = /[a-zA-Z\d\s\-,#.+]+/;
+
   constructor() { }
 
   ngOnInit() {

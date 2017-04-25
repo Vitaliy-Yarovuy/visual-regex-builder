@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class BlocksContainerComponent implements OnInit {
 
   blocks = [
-    {name: 'startOfLine()'},
+    {name: 'Space'},
     {name: 'http'},
     {name: 's'},
     {name: '://'},

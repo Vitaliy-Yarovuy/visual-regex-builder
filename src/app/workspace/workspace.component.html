@@ -1,5 +1,15 @@
-<section class="workspace">
-  <h3>startOfLine()</h3>
-  <h3>or()</h3>
-  <h3>find('text')</h3>
-</section>
+<div class="workspace-container">
+  <md-toolbar color="warn">
+    <h2>Workflow</h2>
+    <md-toolbar-row>
+    <div class="container" *ngFor="let block of blocks">
+      <md-card>
+        <md-card-content class="content">
+          <div class="block">{{block.name}}</div>
+        </md-card-content>
+      </md-card>
+      <span class="combiner" *ngIf="!block.last">+</span>
+    </div>
+    </md-toolbar-row>
+  </md-toolbar>
+</div>

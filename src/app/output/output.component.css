@@ -1,10 +1,5 @@
-section {
-  border: 1px dashed grey;
-  padding: 5px;
-  margin: 5px;
-}
-
-h3{
-  border: 1px dashed grey;
+.reg-exp {
   display: inline-block;
+  padding: 0.7em;
+  background-color: beige;
 }

@@ -1,5 +1,11 @@
-<section class="result">
-  <label>output</label>
-  <input type="text" value="/some[^as]\d+/">
-  <button>copy</button>
-</section>
+<div class="content">
+      <md-card>
+        <md-card-title>Output</md-card-title>
+        <md-card-content class="output">
+          <span class="reg-exp">
+            {{regExp}}
+          </span>
+          <button md-raised-button color="primary">Copy</button>
+        </md-card-content>
+      </md-card>
+</div>

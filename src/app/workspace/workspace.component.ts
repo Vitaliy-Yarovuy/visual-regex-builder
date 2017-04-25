@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkspaceComponent implements OnInit {
 
+  blocks = [
+    {name: 'Space'},
+    {name: 'http'},
+    {name: 's'},
+    {name: '://'},
+    {name: 'www', last: true}
+  ];
+
   constructor() { }
 
   ngOnInit() {
