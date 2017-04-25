@@ -5,8 +5,7 @@
       <md-input-container color="accent">
         <input mdInput value="{{regExp | async}}" #inputTarget>
       </md-input-container>
-      <!--<button md-raised-button color="warn" [xngClipboard]="inputTarget" (cbOnSuccess)="onCopy()">-->
-      <button md-raised-button color="warn">
+      <button md-raised-button color="warn" [ngxClipboard]="inputTarget" (cbOnSuccess)="onCopy()">
         Copy</button>
     </md-toolbar-row>
     <md-toolbar-row>
