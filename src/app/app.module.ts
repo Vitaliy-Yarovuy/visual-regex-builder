@@ -9,7 +9,6 @@ import {AppComponent} from './app.component';
 import {BlocksContainerComponent} from './blocks-container/blocks-container.component';
 import {WorkspaceComponent} from './workspace/workspace.component';
 import {OutputComponent} from './output/output.component';
-import {TestComponent} from './test/test.component';
 import {RegexBuilderService} from './core/regex-builder.service';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
@@ -18,8 +17,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     AppComponent,
     BlocksContainerComponent,
     WorkspaceComponent,
-    OutputComponent,
-    TestComponent
+    OutputComponent
   ],
   imports: [
     BrowserModule,

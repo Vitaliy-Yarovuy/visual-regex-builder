@@ -6,7 +6,7 @@ export abstract class RegexBlock {
 }
 
 @Component({
-  selector: 'app-regex-block',
+  selector: 'cg-regex-block',
   templateUrl: './regex-block.component.html',
   styleUrls: ['./regex-block.component.css']
 })
@@ -24,6 +24,6 @@ export abstract class RegexBlockComponent implements OnInit {
     // TODO provide correct index
     const index = 1;
     const block = this.getBlock();
-    this.regexBuilderService.push(index, block);
+    // this.regexBuilderService.push(index, block);
   }
 }
