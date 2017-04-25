@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { DragulaModule } from 'ng2-dragula/ng2-dragula';
 
 import { AppComponent } from './app.component';
-import { RegexBlockComponent } from './core/regex-block/regex-block.component';
 import { BlocksContainerComponent } from './blocks-container/blocks-container.component';
 import { WorkspaceComponent } from './workspace/workspace.component';
 import { OutputComponent } from './output/output.component';
@@ -13,7 +12,6 @@ import { OutputComponent } from './output/output.component';
 @NgModule({
   declarations: [
     AppComponent,
-    RegexBlockComponent,
     BlocksContainerComponent,
     WorkspaceComponent,
     OutputComponent
@@ -22,7 +20,7 @@ import { OutputComponent } from './output/output.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    DragulaModule,
+    DragulaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
