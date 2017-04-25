@@ -1,7 +1,7 @@
-<div class="blocks-container" [dragula]='"drag-bag"'>
+<div class="blocks-container">
   <md-toolbar color="accent">
     <h2>RegExp blocks</h2>
-    <md-toolbar-row>
+    <md-toolbar-row [dragula]='"drag-bag"'>
       <md-card *ngFor="let block of blocks">
         <md-card-content class="content">
           <div class="block">{{block.name}}</div>

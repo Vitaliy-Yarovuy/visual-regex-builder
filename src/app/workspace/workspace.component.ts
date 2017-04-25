@@ -12,7 +12,7 @@ export class WorkspaceComponent implements OnInit {
     {name: 'http'},
     {name: 's'},
     {name: '://'},
-    {name: 'www', last: true}
+    {name: 'www'}
   ];
 
   constructor() { }
