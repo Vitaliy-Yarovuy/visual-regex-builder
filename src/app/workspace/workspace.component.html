@@ -2,12 +2,7 @@
   <md-toolbar color="accent">
     <h2>Workflow</h2>
     <md-toolbar-row>
-      <div class="blocks" [dragula]='"drag-bag"'>
-        <!--<md-card *ngFor="let block of blocks">-->
-          <!--<md-card-content class="content">-->
-            <!--<div class="block">{{block.name}}</div>-->
-          <!--</md-card-content>-->
-        <!--</md-card>-->
+      <div class="blocks " [dragula]='"drag-bag"'>
 
         <cg-regex-block *ngFor="let block of blocks" [block]='block'></cg-regex-block>
 
