@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RegexBuilderService} from '../core/regex-builder.service';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'cg-output',
@@ -8,17 +9,13 @@ import {RegexBuilderService} from '../core/regex-builder.service';
 })
 export class OutputComponent implements OnInit {
 
-  regExp = /[a-zA-Z\d\s\-,#.+]+/;
+  regExp: Observable<RegExp>;
 
   constructor(private regexBuilderService: RegexBuilderService) {
   }
 
   ngOnInit() {
-    this.change();
-  }
-
-  change() {
-    this.regExp = this.regexBuilderService.generateRegex();
-
+    // regExp = this.regexBuilderService.currentRegExp.subscribe(value => this.regExp = value);
+    this.regExp = this.regexBuilderService.currentRegExp;
   }
 }

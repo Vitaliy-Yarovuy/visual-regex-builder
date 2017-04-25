@@ -24,6 +24,12 @@ export class WorkspaceComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
+
+    const blocks = this.blocks
+      .map(block => getRegexBlock(block.type, block.values));
+
+    this.regexBuilderService.set(blocks);
+    this.regexBuilderService.generateRegex();
   }
 
   ngOnChanges(changes: SimpleChanges): void {

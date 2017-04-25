@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {RegexBlock} from './regex-block/regex-block.component';
+import {BehaviorSubject, Observable, Observer, Subject} from "rxjs";
 
 interface BlockElement {
   index: number;
@@ -11,9 +12,13 @@ export class RegexBuilderService {
 
   blocks: Array<RegexBlock>;
 
+  currentRegExp: BehaviorSubject<RegExp>;
+
   constructor() {
     this.blocks = [];
+    this.currentRegExp = new BehaviorSubject(null);
   }
+
   //
   // push(index: number, block: RegexBlock) {
   //   this.blocks.push({index, block});
@@ -34,10 +39,13 @@ export class RegexBuilderService {
   //     .reduce((result, element) => element.block.add(result), VerEx())
   //     .toRegExp();
   // }
-  generateRegex(): RegExp {
-    return this.blocks
+  generateRegex(): void {
+    const regExp = this.blocks
       .reduce((result, block) => block.add(result), VerEx())
       .toRegExp();
+
+    console.log('regExp', regExp);
+    this.currentRegExp.next(regExp);
   }
 
   clear() {
