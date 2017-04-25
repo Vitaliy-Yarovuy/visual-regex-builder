@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {RegexBlock} from './regex-block/regex-block.component';
+import {VerEx} from 'verbal-expressions';
 
 interface BlockElement {
   index: number;

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RegexBuilderService} from '../regex-builder.service';
+import {VerbalExpression} from 'verbal-expressions';
 
 export abstract class RegexBlock {
   abstract add(expression: VerbalExpression): VerbalExpression

@@ -1,0 +1,6 @@
+
+{
+  "globalDependencies": {
+    "verbal-expression": "file:./node_modules/verbal-expressions/typings/verbalexpression.d.ts"
+  }
+}
