@@ -11,6 +11,7 @@ import {WorkspaceComponent} from './workspace/workspace.component';
 import {OutputComponent} from './output/output.component';
 import {TestComponent} from './test/test.component';
 import {RegexBuilderService} from './core/regex-builder.service';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {RegexBuilderService} from './core/regex-builder.service';
     FormsModule,
     HttpModule,
     MaterialModule,
-    DragulaModule
+    DragulaModule,
+    BrowserAnimationsModule
   ],
   providers: [RegexBuilderService],
   bootstrap: [AppComponent]
