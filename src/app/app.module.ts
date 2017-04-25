@@ -13,7 +13,7 @@ import {RegexBuilderService} from './core/regex-builder.service';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { AddBlockComponent } from './core/add-block/add-block.component';
 import { TemplateBlockComponent } from './template-block/template-block.component';
-import {ClipboardModule} from 'angular2-clipboard';
+// import {ClipboardModule} from 'angular2-clipboard';
 import { FlagComponent } from './output/flag/flag.component';
 
 @NgModule({
@@ -33,7 +33,7 @@ import { FlagComponent } from './output/flag/flag.component';
     MaterialModule,
     DragulaModule,
     BrowserAnimationsModule,
-    ClipboardModule
+    // ClipboardModule
   ],
   providers: [RegexBuilderService],
   bootstrap: [AppComponent]

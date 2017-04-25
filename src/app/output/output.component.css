@@ -11,4 +11,5 @@ button {
   align-items: flex-start;
   font-size: 0.7em;
   justify-content: space-between;
+  flex-wrap: wrap;
 }

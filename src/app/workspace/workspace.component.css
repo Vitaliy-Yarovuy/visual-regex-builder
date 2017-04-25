@@ -14,7 +14,7 @@ md-card {
 .blocks {
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   display: flex;
 }
 
