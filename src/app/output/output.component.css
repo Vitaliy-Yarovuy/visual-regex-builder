@@ -12,9 +12,3 @@ button {
   font-size: 0.7em;
   justify-content: space-between;
 }
-
-.flag-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-width: 15em;
-}
