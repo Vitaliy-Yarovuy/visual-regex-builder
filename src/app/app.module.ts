@@ -15,6 +15,7 @@ import { AddBlockComponent } from './core/add-block/add-block.component';
 import { TemplateBlockComponent } from './template-block/template-block.component';
 import { FlagComponent } from './output/flag/flag.component';
 import {ClipboardModule} from 'ngx-clipboard/dist';
+import {RegexBlockComponent} from "./core/regex-block/regex-block.component";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {ClipboardModule} from 'ngx-clipboard/dist';
     OutputComponent,
     AddBlockComponent,
     TemplateBlockComponent,
+    RegexBlockComponent,
     FlagComponent
   ],
   imports: [

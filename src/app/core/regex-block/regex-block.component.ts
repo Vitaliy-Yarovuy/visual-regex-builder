@@ -1,16 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {RegexBuilderService} from '../regex-builder.service';
 
-export abstract class RegexBlock {
-  abstract add(expression: VerbalExpression): VerbalExpression
-}
-
 @Component({
   selector: 'cg-regex-block',
   templateUrl: './regex-block.component.html',
   styleUrls: ['./regex-block.component.css']
 })
-export abstract class RegexBlockComponent implements OnInit {
+export class RegexBlockComponent implements OnInit {
 
   constructor(public regexBuilderService: RegexBuilderService) {
   }
@@ -18,7 +14,9 @@ export abstract class RegexBlockComponent implements OnInit {
   ngOnInit() {
   }
 
-  abstract getBlock(): RegexBlock;
+  getBlock() {
+
+  }
 
   onDrop() {
     // TODO provide correct index

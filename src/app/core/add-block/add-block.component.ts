@@ -9,6 +9,7 @@ import {RegexpDataService} from "../services/regexp-data.service";
 })
 export class AddBlockComponent extends RegexpDataService implements OnInit {
 
+  selectedBlock: string;
   blocks: Array<any>;
 
   isClicked = false;
