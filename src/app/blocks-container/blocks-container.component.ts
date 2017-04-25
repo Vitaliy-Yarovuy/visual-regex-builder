@@ -13,6 +13,19 @@ export class BlocksContainerComponent implements OnInit {
     {name: 'http'},
     {name: 's'},
     {name: '://'},
+    {name: '://'},
+    {name: '://'},
+    {name: '://'},
+    {name: '://'},
+    {name: '://'},
+    {name: '://'},
+    {name: '://'},
+    {name: '://'},
+    {name: '://'},
+    {name: '://'},
+    {name: '://'},
+    {name: '://'},
+    {name: '://'},
     {name: 'www'}
   ];
 
