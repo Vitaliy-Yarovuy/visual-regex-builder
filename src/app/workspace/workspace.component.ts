@@ -22,7 +22,9 @@ export class WorkspaceComponent implements OnInit, OnChanges {
   public blocks: Array<Block> = [
     { type: BlockType.StartOfLine, values: []},
     { type: BlockType.Text, values: ['http']},
-    { type: BlockType.Maybe, values: ['s']}
+    { type: BlockType.Maybe, values: ['s']},
+    { type: BlockType.Anything, values: []},
+    { type: BlockType.EndOfLine, values: []}
   ];
 
   constructor(public regexBuilderService: RegexBuilderService, public dragulaService: DragulaService) {
