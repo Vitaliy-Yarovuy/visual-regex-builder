@@ -1,4 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
+enum BlockType {
+  StartOfLine,
+  Maybe
+}
+
+interface Block {
+  type: BlockType;
+  values: Array<string | number>;
+}
 
 @Component({
   selector: 'cg-workspace',
@@ -7,15 +17,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkspaceComponent implements OnInit {
 
-  blocks = [
-    {name: 'Space'},
-    {name: 'http'},
-    {name: 's'},
-    {name: '://'},
-    {name: 'www'}
-  ];
+  blocks: Array<Block>;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
