@@ -30,6 +30,7 @@ export interface Block {
   values: Array<string | number>;
 }
 
+
 export abstract class RegexBlock {
   abstract add(expression: VerbalExpression): VerbalExpression
 }
