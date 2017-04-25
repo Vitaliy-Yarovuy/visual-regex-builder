@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {RegexBlock} from './regex-block/regex-block.component';
-import {VerEx} from 'verbal-expressions';
 
 interface BlockElement {
   index: number;
@@ -21,6 +20,7 @@ export class RegexBuilderService {
   }
 
   generateRegex(): RegExp {
+    console.log('this.blocks', this.blocks);
     return this.blocks
       .sort((a, b) => a.index - b.index)
       .reduce((result, element) => element.block.add(result), VerEx())
