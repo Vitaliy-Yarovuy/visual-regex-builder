@@ -3,10 +3,6 @@
   align-items: stretch;
 }
 
-md-card {
-  margin: 0.2em;
-}
-
 .mat-toolbar-row {
   height: auto;
 }

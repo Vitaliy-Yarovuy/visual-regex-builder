@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {RegexBlock} from './regex-block/regex-block.component';
 import {BehaviorSubject, Observable, Observer, Subject} from "rxjs";
+import {Block, BlockType, getRegexBlock} from "../block-models/regex-block-models";
 
 interface BlockElement {
   index: number;
@@ -24,10 +25,6 @@ export class RegexBuilderService {
   //   this.blocks.push({index, block});
   // }
 
-  set(blocks: Array<RegexBlock>) {
-    this.blocks = blocks;
-  }
-
   // push(index: number, block: RegexBlock) {
   //   this.blocks.push({index, block});
   // }
@@ -39,12 +36,12 @@ export class RegexBuilderService {
   //     .reduce((result, element) => element.block.add(result), VerEx())
   //     .toRegExp();
   // }
-  generateRegex(): void {
-    const regExp = this.blocks
+  generateRegex(blocks: Array<Block>): void {
+    const regExp = blocks
+      .map(block => getRegexBlock(block.type, block.values))
       .reduce((result, block) => block.add(result), VerEx())
       .toRegExp();
 
-    console.log('regExp', regExp);
     this.currentRegExp.next(regExp);
   }
 

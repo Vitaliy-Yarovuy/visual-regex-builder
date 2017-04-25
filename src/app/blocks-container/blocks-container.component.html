@@ -3,11 +3,7 @@
     <h2>RegExp blocks</h2>
     <md-toolbar-row>
       <div class="blocks" [dragula]='"drag-bag"'>
-        <md-card *ngFor="let block of blocks" class="block">
-          <md-card-content class="content">
-            <span>{{block.name}}</span>
-          </md-card-content>
-        </md-card>
+        <cg-template-block *ngFor="let block of blocks" [title]="block.name" [type]="block.type"></cg-template-block>
       </div>
     </md-toolbar-row>
   </md-toolbar>
