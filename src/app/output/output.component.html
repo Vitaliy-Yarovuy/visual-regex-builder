@@ -3,9 +3,10 @@
     <h2>Output</h2>
     <md-toolbar-row [dragula]='"drag-bag"'>
       <md-input-container color="accent">
-        <input mdInput value="{{regExp | async}}">
+        <input mdInput value="{{regExp | async}}" #inputTarget>
       </md-input-container>
-      <button md-raised-button color="warn">Copy</button>
+      <button md-raised-button color="warn" xngClipboard="" [xngClipboard]="inputTarget" (cbOnSuccess)="onCopy()">
+        Copy</button>
     </md-toolbar-row>
     <md-toolbar-row>
       <div class="flags">
