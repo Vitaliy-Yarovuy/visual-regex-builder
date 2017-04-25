@@ -10,14 +10,20 @@ interface BlockElement {
 
 @Injectable()
 export class RegexBuilderService {
-
-  blocks: Array<RegexBlock>;
+  modifiers: { 'i': boolean; 'g': boolean; 'm': boolean; 'y': boolean; };
+  blocks: Array<Block>;
 
   currentRegExp: BehaviorSubject<RegExp>;
 
   constructor() {
     this.blocks = [];
     this.currentRegExp = new BehaviorSubject(null);
+    this.modifiers = {'i': false, 'g': true, 'm': true, 'y': false};
+  }
+
+  setModifier(modifier: string, enable: boolean) {
+    this.modifiers[modifier] = enable;
+    this.generateRegex(this.blocks);
   }
 
   //
@@ -37,6 +43,16 @@ export class RegexBuilderService {
   //     .toRegExp();
   // }
   generateRegex(blocks: Array<Block>): void {
+
+    this.blocks = blocks.slice();
+
+    for (const key in this.modifiers) {
+      blocks.push({
+        type: this.modifiers[key] ? BlockType.AddModifier : BlockType.RemoveModifier,
+        values: [key]
+      });
+    }
+
     const regExp = blocks
       .map(block => getRegexBlock(block.type, block.values))
       .reduce((result, block) => block.add(result), VerEx())

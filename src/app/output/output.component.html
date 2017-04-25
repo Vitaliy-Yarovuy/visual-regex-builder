@@ -5,27 +5,15 @@
       <md-input-container color="accent">
         <input mdInput value="{{regExp | async}}" #inputTarget>
       </md-input-container>
-      <button md-raised-button color="warn" xngClipboard="" [xngClipboard]="inputTarget" (cbOnSuccess)="onCopy()">
+      <button md-raised-button color="warn" [xngClipboard]="inputTarget" (cbOnSuccess)="onCopy()">
         Copy</button>
     </md-toolbar-row>
     <md-toolbar-row>
       <div class="flags">
-        <div class="flag-wrapper">
-          <md-checkbox color="primary">g</md-checkbox>
-          <span>Global matching</span>
-        </div>
-        <div class="flag-wrapper">
-          <md-checkbox color="primary">i</md-checkbox>
-          <span>Case ignoring</span>
-        </div>
-        <div class="flag-wrapper">
-          <md-checkbox color="primary">m</md-checkbox>
-          <span>Multiple lines matching</span>
-        </div>
-        <div class="flag-wrapper">
-          <md-checkbox color="primary">y</md-checkbox>
-          <span>Sticky search</span>
-        </div>
+        <cg-flag title="Global matching" modifier="g" [checked]="true"></cg-flag>
+        <cg-flag title="Case ignoring" modifier="i"></cg-flag>
+        <cg-flag title="Multiple lines matching" modifier="m" [checked]="true"></cg-flag>
+        <cg-flag title="Sticky search" modifier="y"></cg-flag>
       </div>
     </md-toolbar-row>
   </md-toolbar>

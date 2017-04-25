@@ -1,4 +1,6 @@
 export enum BlockType {
+  AddModifier,
+  RemoveModifier,
   EndCapture,
   BeginCapture,
   Or,
@@ -211,6 +213,28 @@ class EndCapture extends RegexBlock {
   }
 }
 
+class AddModifier extends RegexBlock {
+
+  constructor(private value: RegExpFlags) {
+    super();
+  }
+
+  add(expression: VerbalExpression): VerbalExpression {
+    return expression.addModifier(this.value);
+  }
+}
+
+class RemoveModifier extends RegexBlock {
+
+  constructor(private value: RegExpFlags) {
+    super();
+  }
+
+  add(expression: VerbalExpression): VerbalExpression {
+    return expression.removeModifier(this.value);
+  }
+}
+
 export function getRegexBlock(type: BlockType, values: Array<any>) {
   switch (type) {
     case BlockType.StartOfLine:
@@ -253,6 +277,10 @@ export function getRegexBlock(type: BlockType, values: Array<any>) {
       return new Multiple(values[0]);
     case BlockType.Or:
       return new Or(values[0]);
+    case BlockType.AddModifier:
+      return new AddModifier(values[0]);
+    case BlockType.RemoveModifier:
+      return new RemoveModifier(values[0]);
     case BlockType.BeginCapture:
       return new BeginCapture();
     case BlockType.EndCapture:

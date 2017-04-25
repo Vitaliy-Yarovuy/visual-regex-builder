@@ -14,6 +14,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { AddBlockComponent } from './core/add-block/add-block.component';
 import { TemplateBlockComponent } from './template-block/template-block.component';
 import {ClipboardModule} from 'angular2-clipboard';
+import { FlagComponent } from './output/flag/flag.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {ClipboardModule} from 'angular2-clipboard';
     WorkspaceComponent,
     OutputComponent,
     AddBlockComponent,
-    TemplateBlockComponent
+    TemplateBlockComponent,
+    FlagComponent
   ],
   imports: [
     BrowserModule,
