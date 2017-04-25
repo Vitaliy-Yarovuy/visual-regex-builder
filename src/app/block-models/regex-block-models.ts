@@ -23,6 +23,11 @@ export enum BlockType {
   EndOfLine
 }
 
+export interface Block {
+  type: BlockType;
+  values: Array<string | number>;
+}
+
 export abstract class RegexBlock {
   abstract add(expression: VerbalExpression): VerbalExpression
 }

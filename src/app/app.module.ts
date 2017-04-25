@@ -12,6 +12,7 @@ import {OutputComponent} from './output/output.component';
 import {RegexBuilderService} from './core/regex-builder.service';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { AddBlockComponent } from './core/add-block/add-block.component';
+import { TemplateBlockComponent } from './template-block/template-block.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AddBlockComponent } from './core/add-block/add-block.component';
     BlocksContainerComponent,
     WorkspaceComponent,
     OutputComponent,
-    AddBlockComponent
+    AddBlockComponent,
+    TemplateBlockComponent
   ],
   imports: [
     BrowserModule,

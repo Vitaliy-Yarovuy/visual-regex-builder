@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RegexBuilderService} from '../core/regex-builder.service';
-import {Observable} from "rxjs";
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'cg-output',
@@ -15,7 +15,6 @@ export class OutputComponent implements OnInit {
   }
 
   ngOnInit() {
-    // regExp = this.regexBuilderService.currentRegExp.subscribe(value => this.regExp = value);
     this.regExp = this.regexBuilderService.currentRegExp;
   }
 }
