@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { dragula } from 'dragula';
 
 @Component({
   selector: 'cg-blocks-container',
