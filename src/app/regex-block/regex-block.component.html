@@ -6,17 +6,18 @@
       </div>
       <div *ngSwitchCase="'SingleValue'">
         <md-input-container>
-          <input type="text" mdInput placeholder="{{block.type | blockTypes}}" [(ngModel)]="block.values[0]">
+          <input type="text" mdInput placeholder="{{block.type | blockTypes}}" [(ngModel)]="block.values[0]"
+                 (input)="onValueInput()">
         </md-input-container>
       </div>
       <div *ngSwitchCase="'TwoValue'">
         <span>{{block.type | blockTypes}}</span>
         <md-input-container>
-          <input type="text" mdInput [(ngModel)]="block.values[0]">
+          <input type="text" mdInput [(ngModel)]="block.values[0]" (input)="onValueInput()">
         </md-input-container>
         -
         <md-input-container>
-          <input type="text" mdInput [(ngModel)]="block.values[1]">
+          <input type="text" mdInput [(ngModel)]="block.values[1]" (input)="onValueInput()">
         </md-input-container>
       </div>
       <div *ngSwitchCase="'Capture'">
