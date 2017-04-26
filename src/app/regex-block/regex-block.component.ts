@@ -21,12 +21,16 @@ export class RegexBlockComponent extends BlockCategoryPipe implements OnInit {
 
   @Input() block: Block;
 
-  constructor() {
+  constructor(private regexBuilderService: RegexBuilderService) {
     super();
   }
 
   ngOnInit() {
     this.isEditable = this.defineWhetherBlockEditable();
+  }
+
+  onValueInput() {
+    this.regexBuilderService.refreshRegex();
   }
 
   getBlockCategory() {
@@ -37,5 +41,9 @@ export class RegexBlockComponent extends BlockCategoryPipe implements OnInit {
     const blockCategory = this.getBlockCategory();
 
     return (blockCategory === 'SingleValue') || (blockCategory === 'TwoValue');
+  }
+
+  getCaptureSymbol() {
+    return this.block.type === 3 ? '(' : ')';
   }
 }

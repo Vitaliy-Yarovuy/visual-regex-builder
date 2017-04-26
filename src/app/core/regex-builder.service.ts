@@ -22,6 +22,10 @@ export class RegexBuilderService {
     this.generateRegex(this.blocks);
   }
 
+  refreshRegex(): void {
+    this.generateRegex(this.blocks);
+  }
+
   generateRegex(blocks: Array<Block>): void {
 
     this.blocks = blocks.slice();
