@@ -9,3 +9,7 @@
   flex-direction: column;
   height: 100%;
 }
+
+.cdk-overlay-container .mat-menu-panel{
+  max-height: 400px;
+}

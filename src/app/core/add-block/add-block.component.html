@@ -1,10 +1,13 @@
 <div class="add-block">
   <div class="add-block-wrapper">
-    <button md-mini-fab (click)="toggleDropdown()" color="warn">+</button>
-    <div class="select-wrapper wolters-kluwer-border" *ngIf="isClicked">
-      <md-select [(ngModel)]="selectedBlock" (change)="blockAdd.emit($event.value)">
-        <md-option *ngFor="let block of blocks" [value]="block.type">{{block.name}}</md-option>
-      </md-select>
-    </div>
+    <button md-icon-button [mdMenuTriggerFor]="add_menu">
+      <button md-mini-fab color="warn">+</button>
+    </button>
+    <md-menu #add_menu="mdMenu">
+      <button md-menu-item  *ngFor="let block of blocks" (click)="blockAdd.emit(block.type)">
+        <span>{{block.name}}</span>
+      </button>
+    </md-menu>
+
   </div>
 </div>
