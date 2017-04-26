@@ -8,8 +8,8 @@
                         [block]='block'>
         </cg-regex-block>
 
-        <cg-add-block></cg-add-block>
       </div>
+      <cg-add-block (blockAdd)="blockAdd($event)"></cg-add-block>
     </md-toolbar-row>
   </md-toolbar>
 </div>

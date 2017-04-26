@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {getRegexBlock} from "../../block-models/regex-block-models";
 import {RegexpDataService} from "../services/regexp-data.service";
 
@@ -8,8 +8,8 @@ import {RegexpDataService} from "../services/regexp-data.service";
   styleUrls: ['./add-block.component.css']
 })
 export class AddBlockComponent extends RegexpDataService implements OnInit {
+  @Output() blockAdd = new EventEmitter();
 
-  selectedBlock: string;
   blocks: Array<any>;
 
   isClicked = false;
