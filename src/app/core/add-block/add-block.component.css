@@ -4,39 +4,11 @@
   align-items: center;
 }
 
-.add-block-wrapper {
-  display: flex;
-  height: 1em;
-  width: 1em;
-  background-color: lightseagreen;
-  border-radius: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .add-block-wrapper button {
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 50px;
 }
 
 .mat-mini-fab {
   line-height: 0;
-}
-
-.select-wrapper {
-  background-color: whitesmoke;
-  margin-left: 0.2em;
-}
-
-.wolters-kluwer-border {
-  border-top: 5px solid #7bc144;
-  border-bottom: 5px solid #0081c5;
-  border-right: 5px solid #a0c2e5;
-  border-left: 5px solid #e30e62;
-}
-
-
-/*TODO remove this afterwards*/
-.add-block h6 {
-  margin: 0 1em;
 }

@@ -1,6 +1,7 @@
 .workspace-container {
   display: flex;
   justify-content: flex-start;
+  position: relative;
 }
 
 md-card {
@@ -21,4 +22,10 @@ md-card {
 .combiner {
   display: block;
   padding: 1em;
+}
+
+cg-add-block{
+  position: absolute;
+  right: 10px;
+  bottom: 0;
 }
