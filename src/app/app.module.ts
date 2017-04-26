@@ -17,6 +17,7 @@ import { FlagComponent } from './output/flag/flag.component';
 import {ClipboardModule} from 'ngx-clipboard/dist';
 import {RegexBlockComponent} from './regex-block/regex-block.component';
 import { BlockTypesPipe } from './core/block-types.pipe';
+import { BlockCategoryPipe } from './core/block-category.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { BlockTypesPipe } from './core/block-types.pipe';
     TemplateBlockComponent,
     RegexBlockComponent,
     FlagComponent,
-    BlockTypesPipe
+    BlockTypesPipe,
+    BlockCategoryPipe
   ],
   imports: [
     BrowserModule,

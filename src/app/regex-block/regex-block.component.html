@@ -1,5 +1,16 @@
 <md-card class="block">
   <md-card-content class="content">
     <span>{{block.type | blockTypes}}</span>
+    <div [ngSwitch]="block.type | blockCategory">
+      <span *ngSwitchCase="'NoValue'"> </span>
+      <span *ngSwitchCase="'SingleValue'">
+        <input type="text" [(ngModel)]="block.values[0]"/>
+      </span>
+      <span *ngSwitchCase="'TwoValue'">
+       <input type="text" [(ngModel)]="block.values[0]"/> -
+       <input type="text" [(ngModel)]="block.values[1]"/>
+      </span>
+      <span *ngSwitchCase="'Nothings'"> Nothings </span>
+    </div>
   </md-card-content>
 </md-card>
