@@ -75,6 +75,14 @@ export const getBlockCategory = (type: BlockType) => {
   return BlockCategory.Nothings;
 };
 
+const clearValues = (values) => {
+  const arr = values.slice();
+  while (arr.length && !arr[arr.length - 1]) {
+    arr.pop();
+  }
+  return arr;
+};
+
 
 export interface Block {
   type: BlockType;
@@ -208,8 +216,7 @@ class Range extends RegexBlock {
   }
 
   add(expression: VerbalExpression): VerbalExpression {
-    // TODO manually implement range
-    return expression.range();
+    return expression.range.apply(expression, clearValues(this.values));
   }
 }
 
@@ -220,8 +227,7 @@ class RepeatPrevious extends RegexBlock {
   }
 
   add(expression: VerbalExpression): VerbalExpression {
-    // TODO manually implement RepeatPrevious
-    return expression.repeatPrevious();
+    return expression.repeatPrevious.apply(expression, clearValues(this.values));
   }
 }
 
