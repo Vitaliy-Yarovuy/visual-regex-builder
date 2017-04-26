@@ -8,6 +8,7 @@
           *ngFor="let block of blocks"
           [block]="block"
           [title]="block.name"
+          [attr.data-type]="block.type"
           [type]="block.type">
         </cg-template-block>
       </div>

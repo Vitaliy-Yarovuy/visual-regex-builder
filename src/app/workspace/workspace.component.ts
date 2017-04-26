@@ -41,7 +41,7 @@ export class WorkspaceComponent implements OnInit, OnChanges{
     const isSource = (el) => el.classList.contains('for-copy');
     const isRemove = (el) => el.classList.contains('for-remove');
     const buildBlockFromSource = (el) => ({
-      type: +el.getAttribute('ng-reflect-type'),
+      type: +el.getAttribute('data-type'),
       values: ['', '']
     });
 
@@ -94,13 +94,11 @@ export class WorkspaceComponent implements OnInit, OnChanges{
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('change', changes);
     this.regexBuilderService.generateRegex(this.blocks);
   }
 
   clear() {
     this.blocks = [];
-    this.regexBuilderService.clear();
     this.regexBuilderService.generateRegex(this.blocks);
   }
 }
