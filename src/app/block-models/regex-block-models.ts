@@ -25,6 +25,48 @@ export enum BlockType {
   EndOfLine
 }
 
+export enum BlockCategory {
+  NoValue,
+  SingleValue,
+  TwoValue,
+  Nothings,
+}
+
+const blockCategories = {
+  [BlockCategory.NoValue]: [
+    BlockType.Any,
+    BlockType.WhiteSpace,
+    BlockType.LineBreak,
+    BlockType.Br,
+    BlockType.Tab,
+    BlockType.Word,
+    BlockType.Digit,
+    BlockType.EndOfLine,
+  ],
+  [BlockCategory.SingleValue]: [
+    BlockType.Text,
+    BlockType.Maybe,
+    BlockType.AnythingBut,
+    BlockType.SomethingBut,
+    BlockType.Or,
+    BlockType.Multiple,
+  ],
+  [BlockCategory.TwoValue]: [
+    BlockType.Range,
+    BlockType.RepeatPrevious,
+  ]
+};
+
+export const getBlockCategory = (type: BlockType) => {
+  for (const category in blockCategories) {
+    if (blockCategories[category].includes(type)) {
+      return category;
+    }
+  }
+  return BlockCategory.Nothings;
+};
+
+
 export interface Block {
   type: BlockType;
   values: Array<string | number>;
