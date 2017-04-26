@@ -22,7 +22,7 @@ md-card {
   justify-content: flex-start;
   display: flex;
   width: 100%;
-  min-height: 5em;
+  min-height: 4em;
   padding: 0.5em 3.5em 0.5em 1em;
   border: 2px dotted rgba(23, 94, 167, 0.26);
 }
