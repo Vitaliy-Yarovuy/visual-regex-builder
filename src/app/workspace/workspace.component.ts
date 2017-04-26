@@ -23,21 +23,25 @@ export class WorkspaceComponent implements OnInit, OnChanges {
     {type: BlockType.EndOfLine, values: []}
   ];
 
-  constructor(public regexBuilderService: RegexBuilderService, public dragulaService: DragulaService, public ref: ChangeDetectorRef) {
-
+  constructor(public regexBuilderService: RegexBuilderService,
+              public dragulaService: DragulaService,
+              public ref: ChangeDetectorRef) {
   }
 
   ngOnInit() {
     const isSource = (el) => el.classList.contains('for-copy');
-    const buildBlockFromSource = (el) => ({type: el.getAttribute('ng-reflect-type'), values: []});
+    const buildBlockFromSource = (el) => ({
+      type: +el.getAttribute('ng-reflect-type'),
+      values: []
+    });
 
     this.dragulaService.setOptions('drag-bag', {
-      copy:  isSource,
+      copy: isSource,
     });
 
     this.dragulaService.drag.subscribe((args) => {
       const [bag, element, parent] = args;
-      if(!isSource(element)){
+      if (!isSource(element)) {
         const index = indexOf(parent.children, element);
         const item = index + 1 ? this.blocks[index] : null;
         console.log('drag:', item, args);
@@ -47,7 +51,7 @@ export class WorkspaceComponent implements OnInit, OnChanges {
 
     this.dragulaService.drop.subscribe((args) => {
       const [bag, element, parent] = args;
-      if(isSource(element)){
+      if (isSource(element)) {
         const index = indexOf(parent.children, element);
         this.blocks.splice(index, 0, buildBlockFromSource(element));
         element.remove();
@@ -59,12 +63,16 @@ export class WorkspaceComponent implements OnInit, OnChanges {
         this.selectedBlock = null;
       }
 
+      console.log('this.blocks', this.blocks);
+      this.regexBuilderService.generateRegex(this.blocks);
+
     });
 
     this.regexBuilderService.generateRegex(this.blocks);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    console.log('change', changes);
     this.regexBuilderService.generateRegex(this.blocks);
   }
 

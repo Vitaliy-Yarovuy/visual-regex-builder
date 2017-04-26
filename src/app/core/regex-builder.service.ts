@@ -1,11 +1,6 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable, Observer, Subject} from 'rxjs';
-import {Block, BlockType, getRegexBlock, RegexBlock} from '../block-models/regex-block-models';
-
-interface BlockElement {
-  index: number;
-  block: RegexBlock;
-}
+import {BehaviorSubject} from 'rxjs';
+import {Block, BlockType, getRegexBlock} from '../block-models/regex-block-models';
 
 @Injectable()
 export class RegexBuilderService {
@@ -25,39 +20,27 @@ export class RegexBuilderService {
     this.generateRegex(this.blocks);
   }
 
-  //
-  // push(index: number, block: RegexBlock) {
-  //   this.blocks.push({index, block});
-  // }
-
-  // push(index: number, block: RegexBlock) {
-  //   this.blocks.push({index, block});
-  // }
-  //
-  // generateRegex(): RegExp {
-  //   console.log('this.blocks', this.blocks);
-  //   return this.blocks
-  //     .sort((a, b) => a.index - b.index)
-  //     .reduce((result, element) => element.block.add(result), VerEx())
-  //     .toRegExp();
-  // }
   generateRegex(blocks: Array<Block>): void {
 
     this.blocks = blocks.slice();
+    this.clearModifiers();
 
     for (const key in this.modifiers) {
-      blocks.push({
-        type: this.modifiers[key] ? BlockType.AddModifier : BlockType.RemoveModifier,
-        values: [key]
-      });
+      const blockType = this.modifiers[key] ? BlockType.AddModifier : BlockType.RemoveModifier;
+      this.blocks.push({type: blockType, values: [key]});
     }
 
-    const regExp = blocks
+    const regExp = this.blocks
       .map(block => getRegexBlock(block.type, block.values))
       .reduce((result, block) => block.add(result), VerEx())
       .toRegExp();
 
     this.currentRegExp.next(regExp);
+  }
+
+  private clearModifiers() {
+    this.blocks = this.blocks
+      .filter(block => block.type !== BlockType.AddModifier && block.type !== BlockType.RemoveModifier);
   }
 
   clear() {
