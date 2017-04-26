@@ -8,5 +8,9 @@ module.exports = {
   ],
   root: 'dist',
   stripPrefix: 'dist/',
-  navigateFallback: '/index.html'
+  navigateFallback: '/index.html',
+  runtimeCaching: [{
+    urlPattern: /visualregexp\.herokuapp\.com/,
+    handler: 'networkFirst'
+  }]
 };

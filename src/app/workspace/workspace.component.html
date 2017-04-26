@@ -2,14 +2,12 @@
   <md-toolbar color="accent">
     <h2>Workspace</h2>
     <span class="remaining-space"></span>
-    <button md-mini-fab (click)="clear()" color="primary">
-      <i class="fa fa-trash" aria-hidden="true"></i>
-    </button>
+    <button md-raised-button (click)="clear()" color="primary"> Clear</button>
     <md-toolbar-row>
-        <div class="blocks " [dragula]='"drag-bag"'>
-          <cg-regex-block *ngFor="let block of blocks" [block]='block'></cg-regex-block>
-        </div>
-        <cg-add-block (blockAdd)="blockAdd($event)"></cg-add-block>
+      <div class="blocks " [dragula]='"drag-bag"'>
+        <cg-regex-block *ngFor="let block of blocks" [block]='block'></cg-regex-block>
+      </div>
+      <cg-add-block (blockAdd)="blockAdd($event)"></cg-add-block>
     </md-toolbar-row>
   </md-toolbar>
 </div>
