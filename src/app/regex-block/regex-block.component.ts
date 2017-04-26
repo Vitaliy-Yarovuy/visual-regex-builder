@@ -38,4 +38,8 @@ export class RegexBlockComponent extends BlockCategoryPipe implements OnInit {
 
     return (blockCategory === 'SingleValue') || (blockCategory === 'TwoValue');
   }
+
+  getCaptureSymbol() {
+    return this.block.type === 3 ? '(' : ')';
+  }
 }

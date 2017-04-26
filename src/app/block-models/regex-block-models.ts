@@ -30,10 +30,12 @@ export enum BlockCategory {
   SingleValue,
   TwoValue,
   Nothings,
+  Capture
 }
 
 const blockCategories = {
   [BlockCategory.NoValue]: [
+    BlockType.StartOfLine,
     BlockType.Any,
     BlockType.WhiteSpace,
     BlockType.LineBreak,
@@ -41,7 +43,14 @@ const blockCategories = {
     BlockType.Tab,
     BlockType.Word,
     BlockType.Digit,
+    BlockType.OneOrMore,
     BlockType.EndOfLine,
+    BlockType.Something,
+    BlockType.Anything
+  ],
+  [BlockCategory.Capture]: [
+    BlockType.EndCapture,
+    BlockType.BeginCapture
   ],
   [BlockCategory.SingleValue]: [
     BlockType.Text,

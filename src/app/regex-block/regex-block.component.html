@@ -19,8 +19,8 @@
           <input type="text" mdInput [(ngModel)]="block.values[1]">
         </md-input-container>
       </div>
-      <div *ngSwitchCase="'Nothings'">
-        <span>{{block.type | blockTypes}}</span>
+      <div *ngSwitchCase="'Capture'">
+        <span>{{getCaptureSymbol()}}</span>
       </div>
     </div>
   </md-card-content>
