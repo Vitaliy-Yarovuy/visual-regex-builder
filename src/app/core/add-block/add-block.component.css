@@ -2,13 +2,5 @@
   display: flex;
   height: 100%;
   align-items: center;
-}
-
-.add-block-wrapper button {
-  width: 50px;
-  height: 50px;
-}
-
-.mat-mini-fab {
-  line-height: 0;
+  margin: 1em;
 }

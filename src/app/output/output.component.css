@@ -1,5 +1,5 @@
 button {
-  margin: 0 0.4em;
+  margin: 0.4em 0;
 }
 
 .mat-input-container {
@@ -27,4 +27,11 @@ cg-flag {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+}
+
+.error {
+  color: red;
+  font-size: 0.7em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
 }

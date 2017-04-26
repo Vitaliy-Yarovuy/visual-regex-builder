@@ -24,8 +24,7 @@ md-card {
   padding: 1em;
 }
 
-cg-add-block{
-  position: absolute;
-  right: 10px;
-  bottom: 0;
+cg-add-block {
+  display: flex;
+  align-self: baseline;
 }
