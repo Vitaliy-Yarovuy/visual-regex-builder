@@ -10,6 +10,9 @@
           [type]="block.type">
         </cg-template-block>
       </div>
+      <div class="blocks-remove for-remove" [dragula]='"drag-bag"' *ngIf="toRemove | async">
+        <h1>remove element</h1>
+      </div>
     </md-toolbar-row>
   </md-toolbar>
 </div>

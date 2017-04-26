@@ -20,7 +20,7 @@ import { BlockTypesPipe } from './core/block-types.pipe';
 import { TestingAreaComponent } from './testing-area/testing-area.component';
 import { HighlightPipe } from './testing-area/highlight.pipe';
 import { BlockCategoryPipe } from './core/block-category.pipe';
-import {RegexpDataService} from "./core/services/regexp-data.service";
+import { RegexpDataService} from './core/services/regexp-data.service';
 
 @NgModule({
   declarations: [

@@ -39,6 +39,7 @@ export class WorkspaceComponent implements OnInit, OnChanges{
 
   ngOnInit() {
     const isSource = (el) => el.classList.contains('for-copy');
+    const isRemove = (el) => el.classList.contains('for-remove');
     const buildBlockFromSource = (el) => ({
       type: +el.getAttribute('ng-reflect-type'),
       values: []
@@ -61,22 +62,33 @@ export class WorkspaceComponent implements OnInit, OnChanges{
 
     this.dragulaService.drop.subscribe((args) => {
       const [bag, element, parent] = args;
+
+      if (!parent) {
+        element.remove();
+        return;
+      }
+
       if (isSource(element)) {
         const index = indexOf(parent.children, element);
         this.blocks.splice(index, 0, buildBlockFromSource(element));
         element.remove();
       } else {
-        const index = indexOf(parent.children, element);
         const oldIndex = this.blocks.indexOf(this.selectedBlock);
         this.blocks.splice(oldIndex, 1);
-        this.blocks.splice(index, 0, this.selectedBlock);
+        if(isRemove(parent)){
+          element.remove();
+        } else {
+          const index = indexOf(parent.children, element);
+          this.blocks.splice(index, 0, this.selectedBlock);
+        }
         this.selectedBlock = null;
         this.regexData.selectRegexBlock.next(false);
       }
-
-      console.log('this.blocks', this.blocks);
       this.regexBuilderService.generateRegex(this.blocks);
+    });
 
+    this.dragulaService.cancel.subscribe((args) => {
+      this.regexData.selectRegexBlock.next(false);
     });
 
     this.regexBuilderService.generateRegex(this.blocks);
