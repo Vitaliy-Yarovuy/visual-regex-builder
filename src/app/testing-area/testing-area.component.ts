@@ -1,5 +1,4 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {Observable} from 'rxjs';
 import {RegexBuilderService} from '../core/regex-builder.service';
 import {HighlightPipe} from "./highlight.pipe";
 
