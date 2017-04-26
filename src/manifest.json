@@ -1,0 +1,8 @@
+{
+  "name": "Visual regular expressions builder",
+  "short_name": "Visual RegExp",
+  "start_url": "/",
+  "display": "fullscreen",
+  "background_color": "#eee",
+  "theme_color": "#009688"
+}
