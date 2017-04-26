@@ -1,13 +1,10 @@
 <div class="add-block">
-  <div class="add-block-wrapper">
-    <button md-icon-button [mdMenuTriggerFor]="add_menu">
-      <button md-mini-fab color="warn">+</button>
+  <button md-icon-button [mdMenuTriggerFor]="add_menu">
+    <button md-mini-fab color="warn">+</button>
+  </button>
+  <md-menu #add_menu="mdMenu">
+    <button md-menu-item *ngFor="let block of blocks" (click)="blockAdd.emit(block.type)">
+      <span>{{block.name}}</span>
     </button>
-    <md-menu #add_menu="mdMenu">
-      <button md-menu-item  *ngFor="let block of blocks" (click)="blockAdd.emit(block.type)">
-        <span>{{block.name}}</span>
-      </button>
-    </md-menu>
-
-  </div>
+  </md-menu>
 </div>

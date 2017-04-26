@@ -2,14 +2,10 @@
   <md-toolbar color="accent">
     <h2>Workspace</h2>
     <md-toolbar-row>
-      <div class="blocks " [dragula]='"drag-bag"'>
-
-        <cg-regex-block *ngFor="let block of blocks"
-                        [block]='block'>
-        </cg-regex-block>
-
-      </div>
-      <cg-add-block (blockAdd)="blockAdd($event)"></cg-add-block>
+        <div class="blocks " [dragula]='"drag-bag"'>
+          <cg-regex-block *ngFor="let block of blocks" [block]='block'></cg-regex-block>
+        </div>
+        <cg-add-block (blockAdd)="blockAdd($event)"></cg-add-block>
     </md-toolbar-row>
   </md-toolbar>
 </div>
