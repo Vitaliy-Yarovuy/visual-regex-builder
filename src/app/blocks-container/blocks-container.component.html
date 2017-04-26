@@ -6,6 +6,7 @@
         <cg-template-block
           class="for-copy"
           *ngFor="let block of blocks"
+          [block]="block"
           [title]="block.name"
           [type]="block.type">
         </cg-template-block>
