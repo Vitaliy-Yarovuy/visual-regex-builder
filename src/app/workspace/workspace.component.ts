@@ -28,6 +28,13 @@ export class WorkspaceComponent implements OnInit, OnChanges {
               public ref: ChangeDetectorRef) {
   }
 
+  public blockAdd(type: BlockType){
+    this.blocks.push({
+      type: type,
+      values: []
+    });
+  }
+
   ngOnInit() {
     const isSource = (el) => el.classList.contains('for-copy');
     const buildBlockFromSource = (el) => ({
@@ -75,6 +82,7 @@ export class WorkspaceComponent implements OnInit, OnChanges {
     console.log('change', changes);
     this.regexBuilderService.generateRegex(this.blocks);
   }
+
 
 
 }
