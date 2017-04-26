@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import {BlockType} from '../../block-models/regex-block-models';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable()
 export class RegexpDataService {
 
+  public selectRegexBlock: BehaviorSubject<boolean> = new BehaviorSubject(false);
+
   constructor() { }
+
 
   getRegExpData() {
     return  [

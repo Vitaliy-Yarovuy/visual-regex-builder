@@ -7,16 +7,26 @@ import {RegexpDataService} from '../core/services/regexp-data.service';
   templateUrl: './blocks-container.component.html',
   styleUrls: ['./blocks-container.component.css']
 })
-export class BlocksContainerComponent extends RegexpDataService implements OnInit {
+export class BlocksContainerComponent implements OnInit {
 
   blocks: Array<any>;
 
-  constructor() {
-    super();
+  constructor(public regexpData: RegexpDataService) {
   }
 
   ngOnInit() {
-    this.blocks = this.getRegExpData();
+    this.blocks = this.regexpData.getRegExpData();
+
+    this.regexpData.selectRegexBlock.subscribe(
+      function (isSelected) {
+        console.log('Next: ' + isSelected);
+      },
+      function (err) {
+        console.log('Error: ' + err);
+      },
+      function () {
+        console.log('Completed');
+      });
   }
 
 }

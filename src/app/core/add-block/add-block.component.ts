@@ -8,23 +8,17 @@ import {RegexpDataService} from "../services/regexp-data.service";
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./add-block.component.css']
 })
-export class AddBlockComponent extends RegexpDataService implements OnInit {
+export class AddBlockComponent implements OnInit {
   @Output() blockAdd = new EventEmitter();
 
   blocks: Array<any>;
 
-  isClicked = false;
+  constructor(public regexpData: RegexpDataService) {
 
-  constructor() {
-    super();
   }
 
   ngOnInit() {
-    this.blocks = this.getRegExpData();
-  }
-
-  toggleDropdown() {
-    this.isClicked = !this.isClicked;
+    this.blocks = this.regexpData.getRegExpData();
   }
 
 }

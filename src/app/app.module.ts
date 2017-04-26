@@ -18,6 +18,7 @@ import {ClipboardModule} from 'ngx-clipboard/dist';
 import {RegexBlockComponent} from './regex-block/regex-block.component';
 import { BlockTypesPipe } from './core/block-types.pipe';
 import { BlockCategoryPipe } from './core/block-category.pipe';
+import {RegexpDataService} from "./core/services/regexp-data.service";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { BlockCategoryPipe } from './core/block-category.pipe';
     BrowserAnimationsModule,
     ClipboardModule
   ],
-  providers: [RegexBuilderService],
+  providers: [RegexBuilderService, RegexpDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
