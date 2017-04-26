@@ -97,7 +97,4 @@ export class WorkspaceComponent implements OnInit, OnChanges{
     console.log('change', changes);
     this.regexBuilderService.generateRegex(this.blocks);
   }
-
-
-
 }
