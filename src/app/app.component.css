@@ -13,3 +13,7 @@
 .cdk-overlay-container .mat-menu-panel{
   max-height: 400px;
 }
+
+@media screen and (min-device-width: 320px) {
+  h1 {font-size: 90%;}
+}
