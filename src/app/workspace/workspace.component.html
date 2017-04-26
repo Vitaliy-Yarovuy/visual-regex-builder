@@ -4,17 +4,12 @@
     <md-toolbar-row>
       <div class="blocks " [dragula]='"drag-bag"'>
 
-        <cg-regex-block *ngFor="let block of blocks" [block]='block'></cg-regex-block>
+        <cg-regex-block *ngFor="let block of blocks"
+                        [block]='block'>
+        </cg-regex-block>
 
         <cg-add-block></cg-add-block>
       </div>
     </md-toolbar-row>
   </md-toolbar>
 </div>
-<!--<hr/>-->
-
-<!--<div [dragula]='"drag-bag1"' [dragulaModel]='blocks'>-->
-  <!--<div *ngFor='let item of blocks' [innerHtml]='item|json'></div>-->
-<!--</div>-->
-<!--<hr/>-->
-<!--<pre>{{blocks | json}}</pre>-->

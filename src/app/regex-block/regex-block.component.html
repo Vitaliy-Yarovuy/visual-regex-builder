@@ -1,16 +1,27 @@
-<md-card class="block">
+<md-card class="block" [ngClass]="{editable: isEditable}">
   <md-card-content class="content">
-    <span>{{block.type | blockTypes}}</span>
     <div [ngSwitch]="block.type | blockCategory">
-      <span *ngSwitchCase="'NoValue'"> </span>
-      <span *ngSwitchCase="'SingleValue'">
-        <input type="text" [(ngModel)]="block.values[0]"/>
-      </span>
-      <span *ngSwitchCase="'TwoValue'">
-       <input type="text" [(ngModel)]="block.values[0]"/> -
-       <input type="text" [(ngModel)]="block.values[1]"/>
-      </span>
-      <span *ngSwitchCase="'Nothings'"> Nothings </span>
+      <div *ngSwitchCase="'NoValue'">
+        <span>{{block.type | blockTypes}}</span>
+      </div>
+      <div *ngSwitchCase="'SingleValue'">
+        <md-input-container>
+          <input type="text" mdInput placeholder="{{block.type | blockTypes}}" [(ngModel)]="block.values[0]">
+        </md-input-container>
+      </div>
+      <div *ngSwitchCase="'TwoValue'">
+        <span>{{block.type | blockTypes}}</span>
+        <md-input-container>
+          <input type="text" mdInput [(ngModel)]="block.values[0]">
+        </md-input-container>
+        -
+        <md-input-container>
+          <input type="text" mdInput [(ngModel)]="block.values[1]">
+        </md-input-container>
+      </div>
+      <div *ngSwitchCase="'Nothings'">
+        <span>{{block.type | blockTypes}}</span>
+      </div>
     </div>
   </md-card-content>
 </md-card>
