@@ -46,7 +46,7 @@ import { BlockCategoryPipe } from './core/block-category.pipe';
     BrowserAnimationsModule,
     ClipboardModule
   ],
-  providers: [RegexBuilderService],
+  providers: [RegexBuilderService, HighlightPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {
