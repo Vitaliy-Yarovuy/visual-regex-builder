@@ -99,6 +99,8 @@ export class WorkspaceComponent implements OnInit, OnChanges{
   }
 
   clear() {
-    alert("What data should be cleaned???!!!");
+    this.blocks = [];
+    this.regexBuilderService.clear();
+    this.regexBuilderService.generateRegex(this.blocks);
   }
 }
