@@ -2,7 +2,9 @@
   <md-toolbar color="accent">
     <h2>Workspace</h2>
     <span class="remaining-space"></span>
-    <button md-raised-button (click)="clear()" color="primary">Clear</button>
+    <button md-fab (click)="clear()" color="primary">
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    </button>
     <md-toolbar-row>
         <div class="blocks " [dragula]='"drag-bag"'>
           <cg-regex-block *ngFor="let block of blocks" [block]='block'></cg-regex-block>
