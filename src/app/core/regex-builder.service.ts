@@ -8,10 +8,12 @@ export class RegexBuilderService {
   blocks: Array<Block>;
 
   currentRegExp: BehaviorSubject<RegExp>;
+  currentRegExpError: BehaviorSubject<string>;
 
   constructor() {
     this.blocks = [];
     this.currentRegExp = new BehaviorSubject(null);
+    this.currentRegExpError = new BehaviorSubject(null);
     this.modifiers = {'i': false, 'g': true, 'm': true, 'y': false};
   }
 
@@ -23,19 +25,31 @@ export class RegexBuilderService {
   generateRegex(blocks: Array<Block>): void {
 
     this.blocks = blocks.slice();
-    this.clearModifiers();
+    this.updateModifiers();
 
+    this.currentRegExpError.next(null);
+
+    try {
+      const regExp = this.blocks
+        .map(block => getRegexBlock(block.type, block.values))
+        .reduce((result, block) => block.add(result), VerEx())
+        .toRegExp();
+      this.currentRegExp.next(regExp);
+    } catch (e) {
+      this.currentRegExpError.next(e.message);
+    }
+  }
+
+  private updateModifiers() {
+    this.clearModifiers();
+    this.applyModifiers();
+  }
+
+  private applyModifiers() {
     for (const key in this.modifiers) {
       const blockType = this.modifiers[key] ? BlockType.AddModifier : BlockType.RemoveModifier;
       this.blocks.push({type: blockType, values: [key]});
     }
-
-    const regExp = this.blocks
-      .map(block => getRegexBlock(block.type, block.values))
-      .reduce((result, block) => block.add(result), VerEx())
-      .toRegExp();
-
-    this.currentRegExp.next(regExp);
   }
 
   private clearModifiers() {

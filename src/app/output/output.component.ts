@@ -10,12 +10,14 @@ import {MdSnackBar} from '@angular/material';
 })
 export class OutputComponent implements OnInit {
   regExp: Observable<RegExp>;
+  error: Observable<string>;
 
   constructor(private regexBuilderService: RegexBuilderService, private snackBar: MdSnackBar) {
   }
 
   ngOnInit() {
     this.regExp = this.regexBuilderService.currentRegExp;
+    this.error = this.regexBuilderService.currentRegExpError;
   }
 
   onCopy() {

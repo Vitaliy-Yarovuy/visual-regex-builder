@@ -4,6 +4,7 @@
     <md-toolbar-row [dragula]='"drag-bag"'>
       <md-input-container color="accent">
         <input mdInput value="{{regExp | async}}" #inputTarget>
+        <md-hint>{{error | async}}</md-hint>
       </md-input-container>
       <button md-raised-button color="warn" [ngxClipboard]="inputTarget" (cbOnSuccess)="onCopy()">
         Copy</button>
