@@ -33,7 +33,7 @@ export class WorkspaceComponent implements OnInit, OnChanges{
   public blockAdd(type: BlockType){
     this.blocks.push({
       type: type,
-      values: []
+      values: ['', '']
     });
   }
 
@@ -42,7 +42,7 @@ export class WorkspaceComponent implements OnInit, OnChanges{
     const isRemove = (el) => el.classList.contains('for-remove');
     const buildBlockFromSource = (el) => ({
       type: +el.getAttribute('ng-reflect-type'),
-      values: []
+      values: ['', '']
     });
 
     this.dragulaService.setOptions('drag-bag', {
@@ -54,7 +54,6 @@ export class WorkspaceComponent implements OnInit, OnChanges{
       if (!isSource(element)) {
         const index = indexOf(parent.children, element);
         const item = index + 1 ? this.blocks[index] : null;
-        console.log('drag:', item, args);
         this.selectedBlock = item;
         this.regexData.selectRegexBlock.next(true);
       }
@@ -75,7 +74,7 @@ export class WorkspaceComponent implements OnInit, OnChanges{
       } else {
         const oldIndex = this.blocks.indexOf(this.selectedBlock);
         this.blocks.splice(oldIndex, 1);
-        if(isRemove(parent)){
+        if (isRemove(parent)) {
           element.remove();
         } else {
           const index = indexOf(parent.children, element);
