@@ -2,3 +2,7 @@ md-card {
   margin: 0.2em;
   cursor: pointer;
 }
+
+.editable {
+  padding: 0.375em 1.5em;
+}

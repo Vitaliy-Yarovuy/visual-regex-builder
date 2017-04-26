@@ -3,7 +3,12 @@
     <h2>RegExp blocks</h2>
     <md-toolbar-row>
       <div class="blocks" [dragula]='"drag-bag"'>
-        <cg-template-block class="for-copy" *ngFor="let block of blocks" [title]="block.name" [type]="block.type"></cg-template-block>
+        <cg-template-block
+          class="for-copy"
+          *ngFor="let block of blocks"
+          [title]="block.name"
+          [type]="block.type">
+        </cg-template-block>
       </div>
     </md-toolbar-row>
   </md-toolbar>
