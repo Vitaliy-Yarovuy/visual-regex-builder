@@ -6,10 +6,25 @@ button {
   width: 100%;
 }
 
+.mat-toolbar-row {
+  height: auto;
+}
+
 .flags {
   display: flex;
   align-items: flex-start;
   font-size: 0.7em;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+cg-flag {
+  margin: 0.4em;
+}
+
+.output-area {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
